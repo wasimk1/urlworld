@@ -1,39 +1,304 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-  <title>The URL World</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-    rel="stylesheet">
-
-  <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-  <main class="main">
-
-    <div class="url-heading">
-      <P>The URL World</P>
-    </div>
-
-    <hr>
-    <div class="urls">
-      <ol>
-        <li><a href="https://wasimk1.github.io/wasimkhan/" target="_blank">Wasim Khan - Software Engineer (Personal website)</a><br><br>
-        </li>
-        <li><a href="https://www.linkedin.com/in/wasimk1/" target="_blank">LinkedIn - Wasim Khan</a></li>
-        <li><a href="https://github.com/wasimk1" target="_blank">GitHub - Wasim Khan</a></li>
-        <li><a href="http://192.168.0.179:81/home.aspx" target="_blank">Share Text - Chat App</a></li>
-        <li><a href="https://leetcode.com/wasimk1/" target="_blank">Leet code</a></li>
-      </ol>
-    </div>
-
-  </main>
-</body>
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Wasim Khan's personal collection of projects, profiles and useful tools."
+    />
+    <meta name="theme-color" content="#fefae0" />
+    <title>The URL World — Wasim Khan</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='10' fill='%2304E762'/%3E%3Ctext x='7' y='29' font-size='28'%3E↗%3C/text%3E%3C/svg%3E"
+    />
+  </head>
+  <body id="home">
+    <a class="skip" href="#directory">Skip to links</a>
+    <header class="wrap">
+      <a class="brand" href="#home">
+        <b class="logo">↗</b>The URL World<span>.</span>
+      </a>
+      <div class="search-box">
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.7"
+          aria-hidden="true"
+        >
+          <circle cx="10" cy="10" r="6.5" />
+          <path d="m15 15 6 6" />
+        </svg>
+        <label class="sr-only" for="search">Search links</label>
+        <input
+          type="search"
+          id="search"
+          placeholder="Search links..."
+          autocomplete="off"
+        />
+        <button
+          type="button"
+          id="clear-search"
+          aria-label="Clear search"
+          hidden
+        >
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            aria-hidden="true"
+          >
+            <path d="m6 6 12 12M18 6 6 18" />
+          </svg>
+        </button>
+      </div>
+    </header>
+    <main class="wrap">
+      <section class="hero" aria-labelledby="title">
+        <div>
+          <p class="eyebrow"><i> </i>A LITTLE CORNER OF THE INTERNET</p>
+          <h1 id="title">
+            The URL <span>World</span>
+            <em>.</em>
+          </h1>
+          <p class="intro">
+            All my useful links, projects and profiles in one place.
+          </p>
+          <p class="support">
+            Explore my projects, coding profiles, social links and useful tools.
+          </p>
+        </div>
+        <div class="art" aria-hidden="true">
+          <span class="spark">✳</span>
+          <svg viewBox="0 0 250 250" fill="none">
+            <circle cx="125" cy="125" r="94" />
+            <ellipse cx="125" cy="125" rx="43" ry="94" />
+            <ellipse cx="125" cy="125" rx="94" ry="36" />
+            <path d="M31 125h188M125 31v188M49 70h152M49 180h152" />
+          </svg>
+          <span class="code">&lt;/&gt;</span>
+          <span class="arrow">↗</span>
+          <span class="orb"> </span>
+          <small>GOOD LINKS. ONE WORLD.</small>
+        </div>
+      </section>
+      <section
+        class="directory"
+        id="directory"
+        aria-labelledby="directory-title"
+      >
+        <div class="directory-heading">
+          <div>
+            <p class="eyebrow">THE COLLECTION</p>
+            <h2 id="directory-title">
+              Find your next destination<span>.</span>
+            </h2>
+          </div>
+          <span id="total">5 useful links ↗</span>
+        </div>
+        <div class="filter-row">
+          <div class="filters" role="group" aria-label="Filter links">
+            <button data-filter="all" aria-pressed="true" class="active">
+              All links <span>5</span>
+            </button>
+            <button data-filter="projects" aria-pressed="false">
+              Projects <span>1</span>
+            </button>
+            <button data-filter="profiles" aria-pressed="false">
+              Profiles <span>3</span>
+            </button>
+            <button data-filter="tools" aria-pressed="false">
+              Tools <span>1</span>
+            </button>
+          </div>
+          <p id="results" role="status" aria-live="polite">
+            Showing all 5 links
+          </p>
+        </div>
+        <!-- Sections retain categories; their cards share one compact visual grid. -->
+        <div class="cards-grid">
+          <section
+            class="link-section"
+            id="projects"
+            aria-labelledby="projects-title"
+          >
+            <div class="section-heading">
+              <h3 id="projects-title">Projects <span class="count">1</span></h3>
+            </div>
+            <div class="grid">
+              <article
+                class="card featured"
+                data-keywords="portfolio personal website projects"
+              >
+                <div class="card-top">
+                  <span class="icon portfolio-icon" aria-hidden="true">W↗</span>
+                  <h4>Wasim Khan - Software Engineer</h4>
+                </div>
+                <div class="card-bottom">
+                  <a
+                    href="https://wasimk1.github.io/wasimkhan/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Visit Wasim Khan's portfolio (opens in a new tab)"
+                    >Visit Site <span aria-hidden="true">↗</span>
+                  </a>
+                  <span class="category-tag category-project">Project</span>
+                </div>
+              </article>
+            </div>
+          </section>
+          <section
+            class="link-section"
+            id="profiles"
+            aria-labelledby="profiles-title"
+          >
+            <div class="section-heading">
+              <h3 id="profiles-title">Profiles <span class="count">3</span></h3>
+            </div>
+            <div class="grid">
+              <article class="card" data-keywords="professional social career">
+                <div class="card-top">
+                  <span class="icon linkedin-icon" aria-hidden="true">in</span>
+                  <h4>LinkedIn - Wasim Khan</h4>
+                </div>
+                <div class="card-bottom">
+                  <a
+                    href="https://www.linkedin.com/in/wasimk1/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Visit Wasim Khan on LinkedIn (opens in a new tab)"
+                    >Visit Site <span aria-hidden="true">↗</span>
+                  </a>
+                  <span class="category-tag category-profile">Profile</span>
+                </div>
+              </article>
+              <article
+                class="card"
+                data-keywords="developer profile github repositories coding projects"
+              >
+                <div class="card-top">
+                  <span class="icon github-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                      <path
+                        d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.86c-2.78.6-3.37-1.18-3.37-1.18-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.64-1.34-2.22-.25-4.56-1.11-4.56-4.95 0-1.09.39-1.99 1.03-2.69-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.03A9.6 9.6 0 0 1 12 6.81c.85 0 1.71.11 2.51.34 1.91-1.3 2.75-1.03 2.75-1.03.55 1.38.2 2.4.1 2.65.64.7 1.03 1.6 1.03 2.69 0 3.85-2.34 4.7-4.57 4.95.36.31.68.92.68 1.85v2.75c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"
+                      />
+                    </svg>
+                  </span>
+                  <h4>GitHub - Wasim Khan</h4>
+                </div>
+                <div class="card-bottom">
+                  <a
+                    href="https://github.com/wasimk1"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Visit Wasim Khan on GitHub (opens in a new tab)"
+                    >Visit Site <span aria-hidden="true">↗</span>
+                  </a>
+                  <span class="category-tag category-profile">Profile</span>
+                </div>
+              </article>
+              <article
+                class="card"
+                data-keywords="coding practice problem solving"
+              >
+                <div class="card-top">
+                  <span class="icon coding-icon" aria-hidden="true">〈≡</span>
+                  <h4>LeetCode - Wasim Khan</h4>
+                </div>
+                <div class="card-bottom">
+                  <a
+                    href="https://leetcode.com/wasimk1/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Visit Wasim Khan on LeetCode (opens in a new tab)"
+                    >Visit Site <span aria-hidden="true">↗</span>
+                  </a>
+                  <span class="category-tag category-profile">Profile</span>
+                </div>
+              </article>
+            </div>
+          </section>
+          <section
+            class="link-section"
+            id="tools"
+            aria-labelledby="tools-title"
+          >
+            <div class="section-heading">
+              <h3 id="tools-title">Tools <span class="count">1</span></h3>
+            </div>
+            <div class="grid">
+              <article class="card" data-keywords="tool chat share text local">
+                <div class="card-top">
+                  <span class="icon tool-icon" aria-hidden="true">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.7"
+                    >
+                      <path
+                        d="M5 4h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H9l-5 3v-3H3V6a2 2 0 0 1 2-2Z"
+                      />
+                      <path d="M7 9h10M7 13h6" />
+                    </svg>
+                  </span>
+                  <h4>Share Text - Chat App</h4>
+                </div>
+                <div class="card-bottom">
+                  <a
+                    href="http://192.168.0.179:81/home.aspx"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Visit Share Text on the local network (opens in a new tab)"
+                    >Visit Site <span aria-hidden="true">↗</span>
+                  </a>
+                  <span class="category-tag category-tool">Tool</span>
+                </div>
+              </article>
+            </div>
+          </section>
+        </div>
+        <div class="empty" hidden>
+          <h3>No links found.</h3>
+          <p>Try another keyword or explore all links.</p>
+          <button id="reset">Clear search & filters</button>
+        </div>
+      </section>
+      <noscript>
+        <p>
+          Enable JavaScript to use search and filters. All links are available
+          above.
+        </p>
+      </noscript>
+    </main>
+    <footer class="wrap">
+      <div>
+        <a class="brand" href="#home"> <b class="logo">↗</b>The URL World.</a>
+        <p>One place for all the useful links.</p>
+      </div>
+      <div class="footer-right">
+        <p>Built by <strong>Wasim Khan</strong></p>
+        <div>
+          <a
+            href="https://github.com/wasimk1"
+            target="_blank"
+            rel="noopener noreferrer"
+            >GitHub ↗</a
+          >
+          <a
+            href="https://www.linkedin.com/in/wasimk1/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >LinkedIn ↗</a
+          >
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>
